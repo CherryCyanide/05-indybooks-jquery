@@ -11,8 +11,9 @@ public class ApiWriterService : IWriterService
     
     public List<Book> GetAllBooksByWriter(long id) 
     {
-        //TODO: Implement the method GetAllBooksByWriter for IWriterService
-        return new List<Book>();
+        //DONE: Implement the method GetAllBooksByWriter for IWriterService
+        List<Book> booksByWriter = (List<Book>)GetWriterById(id).Books;
+        return booksByWriter;
     }
    
     public List<Writer> GetWriterList()

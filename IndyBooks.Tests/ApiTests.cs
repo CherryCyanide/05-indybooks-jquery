@@ -39,8 +39,8 @@ public class ApiWriterTests
 
 
         // Tell the mock service what to return when ApiController calls methods
-        //TODO: Once you are ready to test your work, uncomment the following line
-        //_mockWriterService.Setup(service => service.GetAllBooksByWriter(5)).Returns(mockBooks);
+        //DONE: Once you are ready to test your work, uncomment the following line
+        _mockWriterService.Setup(service => service.GetAllBooksByWriter(5)).Returns(mockBooks);
         
         _mockWriterService.Setup(service => service.GetWriterById(5)).Returns(new Writer{});
         _mockWriterService.Setup(service => service.GetWriterById(6)).Returns((Writer?)null);

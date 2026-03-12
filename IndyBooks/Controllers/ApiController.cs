@@ -13,14 +13,22 @@ namespace IndyBooks.Controllers
          * BOOK COUNT: returns a new object holding the count of all the books by a single Author as
                     Be sure it passes the ApiWriterTests  BOOK COUNT TEST
          */
-        //TODO: Write the [HttpGet] annotation with the API route for this call
-       
+        //DONE: Write the [HttpGet] annotation with the API route for this call
+       [Route("writers/{id}/bookcount")]
+       [HttpGet]
         public IActionResult GetAuthorBookCount(long id)
         {
-            //TODO: return NotFound if their are no writers in the db with the id
-            
-            //TODO: return OK with the AJAX data as a new object, e.g.,{ Count = 3, Id = 5 } for the given writer         
-            return Ok();
+            Writer writer = _writerService.GetWriterById(id);
+
+            //DONE: return NotFound if their are no writers in the db with the id
+            if (writer == null)
+            {
+                return NotFound();
+            }
+            List<Book> books = _writerService.GetAllBooksByWriter(id);
+
+            //DONE: return OK with the AJAX data as a new object, e.g.,{ Count = 3, Id = 5 } for the given writer         
+            return Ok(new {Id = id, Count = books.Count()});
         }
         /**
          * READ ALL: Retrieves a collection of writers
