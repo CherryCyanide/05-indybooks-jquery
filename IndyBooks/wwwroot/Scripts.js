@@ -1,4 +1,4 @@
-    /* TODO: NOTHING TO CHANGE HERE. BUT FOUR NESTED FUNCTIONS!!!!
+    /* DONE: NOTHING TO CHANGE HERE. BUT FOUR NESTED FUNCTIONS!!!!
         The JavaScript Library called "jQuery" provides a 'tooltip' function that calls
          'getJSON(/api/writer/{id}/bookcount, ... )  when user hovers over rows with a 'data-id'.
         The resulting data is processed by the anonymous 'function(data)' which creates the
@@ -19,4 +19,4 @@ $(function () {
             });
         }
     });
- });
+ });    
